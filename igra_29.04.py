@@ -3,12 +3,10 @@ from tkinter import messagebox
 import random
 
 class WordleGame(tk.Tk):
-    def __init__(self):
-        super().__init__()
+    def setup_game(self, word_file='words.txt'):
         self.title('Wordle Game')
         self.geometry('400x600')
-        with open('words.txt', 'r', encoding='utf-8') as file:
-            self.word_list = [line.strip() for line in file.readlines()]
+        self.load_words(word_file)
         self.choose_word()
         self.create_interface()
         
