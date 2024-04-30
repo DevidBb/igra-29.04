@@ -7,13 +7,9 @@ class WordleGame(tk.Tk):
         super().__init__()
         self.title('Wordle Game')
         self.geometry('400x600')
-        
- 
         with open('words.txt', 'r', encoding='utf-8') as file:
             self.word_list = [line.strip() for line in file.readlines()]
-
         self.choose_word()
-        
         self.create_interface()
         
     def create_interface(self):
